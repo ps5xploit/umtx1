@@ -110,7 +110,6 @@ async function switchPage(id, animate = true) {
     }
 }
 
-
 function registerAppCacheEventHandlers() {
     var appCache = window.applicationCache;
 
@@ -247,6 +246,36 @@ async function removeToast(toast) {
     });
 }
 
+// Función runJailbreak integrada
+async function runJailbreak() {
+    // Hide jailbreak button and show console
+    document.getElementById("run-jb-parent").style.opacity = "0";
+    document.getElementById("console-parent").style.opacity = "1";
+
+    // Mostrar el mensaje "★ Activating Xploit ..."
+    let consoleElement = document.getElementById("console");
+    consoleElement.innerHTML = "★ Activating Xploit ...";
+
+    // Esperar 5 segundos y luego borrar el contenido
+    setTimeout(function() {
+        consoleElement.innerHTML = ""; // Borra el mensaje
+    }, 5000); // 5 segundos de espera
+
+    setTimeout(async () => {
+        let wk_exploit_type = localStorage.getItem("wk_exploit_type");
+        if (wk_exploit_type == "psfree") {
+            debug_log("[ PSFree - Step 1]");
+            await run_psfree(fw_str);  // Ejecuta PSFree después de 2 segundos
+        } else if (wk_exploit_type == "fontface") {
+            await run_fontface();
+        }
+    }, 2000); // Espera 2 segundos antes de iniciar el PSFree
+}
+
+// Ejecuta automáticamente el Jailbreak al cargar la página
+window.onload = async function() {
+    await runJailbreak();
+};
 
 function populatePayloadsPage(wkOnlyMode = false) {
     const payloadsView = document.getElementById('payloads-view');
@@ -292,5 +321,4 @@ function populatePayloadsPage(wkOnlyMode = false) {
 
         payloadsView.appendChild(payloadButton);
     }
-
 }
