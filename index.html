@@ -1,4 +1,4 @@
-
+<html>
 <html manifest="cache.appcache">
 
 <head>
@@ -67,7 +67,14 @@
     <script src="webkit_fontface.js"></script>
     <script type="module" src="psfree/psfree.mjs"></script>
     <script src="payload_map.js"></script>
-    
+    <script>
+    document.getElementById("console-parent").style.opacity = 0;
+
+    // Llama automáticamente a la función runJailbreak cuando la página se carga
+    window.onload = function() {
+        runJailbreak();
+    };
+</script>
     <script>
         addEventListener('unhandledrejection', (event) => {
             const reason = event.reason;
