@@ -102,13 +102,28 @@
         <a tabindex="0" class="btn fw-bold" id="run-jb" style="display: none;" onclick="run()"></a>
     </div>
 
-    <div id="console-view" style="position: relative; z-index: 9999;height:50px;">
-        <!-- Texto AutoJailbreak --><textarea id="console" class="log" readonly style="width: 439px; height: 329px;">★ Activating Xploit ...</textarea>
-
-    </div>
-
-    <div id="payloads-view" style="position: relative; z-index: 9999;height:50px;"></div>
+<div id="console-view" style="position: relative; z-index: 9999;height:50px;">
+    <textarea id="console" class="log" readonly style="width: 439px; height: 329px;">★ Activating Xploit ...</textarea>
 </div>
+
+<div id="payloads-view" style="position: relative; z-index: 9999;height:50px;">
+    <!-- Mensaje Debug Settings Ready -->
+    <div id="debug-settings-message" style="display:none; color: green; font-weight: bold;">
+        ★ Debug Settings Ready ✓<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Waiting payload...
+    </div>
+</div><script>
+    window.onload = () => {
+        // Esperamos que la página de payloads haya sido cargada completamente
+        setTimeout(() => {
+            // Hacer visible el mensaje en payloads-view
+            const debugMessage = document.getElementById('debug-settings-message');
+            if (debugMessage) {
+                debugMessage.style.display = 'block';
+            }
+        }, 2000); // Ajusta este tiempo si es necesario
+    };
+</script>
+
 
 
     <!-- Row 3 -->
