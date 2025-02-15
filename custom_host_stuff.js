@@ -126,49 +126,49 @@ function registerAppCacheEventHandlers() {
 
     if (document.documentElement.hasAttribute("manifest")) {
         if (!navigator.onLine) {
-            createOrUpdateAppCacheToast('Offline.', 2000);
+            createOrUpdateAppCacheToast('★ Off-line wait...', 2000);
         } else {
-            createOrUpdateAppCacheToast("Checking for updates...");
+            createOrUpdateAppCacheToast("★ Check updates...");
         }        
     }
 
     appCache.addEventListener('cached', function (e) {
-        createOrUpdateAppCacheToast('Finished caching site.', 1500);
+        createOrUpdateAppCacheToast('★ Finished caching site', 1500);
     }, false);
 
     appCache.addEventListener('checking', function (e) {
-        createOrUpdateAppCacheToast('Checking for updates...');
+        createOrUpdateAppCacheToast('★ Check updates...');
     }, false);
 
     appCache.addEventListener('downloading', function (e) {
-        createOrUpdateAppCacheToast('Downloading new cache...');
+        createOrUpdateAppCacheToast('★ Downloading cache ...');
     }, false);
 
     appCache.addEventListener('error', function (e) {
         if (navigator.onLine) {
-            createOrUpdateAppCacheToast('Error while caching site.', 5000);
+            createOrUpdateAppCacheToast('★ Error caching ', 5000);
         } else {
-            createOrUpdateAppCacheToast('Offline.', 2000);
+            createOrUpdateAppCacheToast('★ Off-line wait...', 2000);
         }
     }, false);
 
     appCache.addEventListener('noupdate', function (e) {
-        createOrUpdateAppCacheToast('Cache is up-to-date.', 1500);
+        createOrUpdateAppCacheToast('★ Cache is up', 1500);
     }, false);
 
     appCache.addEventListener('obsolete', function (e) {
-        createOrUpdateAppCacheToast('Site is obsolete.');
+        createOrUpdateAppCacheToast('★ Site is obsolete.');
     }, false);
 
     appCache.addEventListener('progress', function (e) {
-        let percentage = Math.round((e.loaded / e.total) * 100);
+    let dots = '.'.repeat(Math.min(Math.floor((e.loaded / e.total) * 3), 3)); // Máximo 3 puntos suspensivos
 
-        createOrUpdateAppCacheToast('Downloading new cache... ' + percentage + '%');
+    createOrUpdateAppCacheToast('★ Downloading cache ... ' + dots);
 
-        if (e.loaded + 1 == e.total) {
-            createOrUpdateAppCacheToast("Processing... This may take a minute.");
-        }
-    }, false);
+    if (e.loaded + 1 == e.total) {
+        createOrUpdateAppCacheToast("★ Done wait ...");
+    }
+}, false);
 
     appCache.addEventListener('updateready', function (e) {
         if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
