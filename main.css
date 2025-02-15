@@ -15,14 +15,13 @@ user-select: none;
     background-color: rgb(14, 14, 20);
     color: white;
     font-family: Arial;
-
     display: grid;
     grid-template-rows: auto 1fr auto;
     height: 100vh;
-    padding: 0;
+    padding: ;
     margin: 0;
     overflow: hidden;
-    box-sizing: border-box;
+   
 
 
 
@@ -232,7 +231,7 @@ a:focus {
     padding: 8px;
     margin: 8px;
     box-sizing: border-box;
-	
+	border: none; /* Elimina el borde */
         }
 #textarea {
 
