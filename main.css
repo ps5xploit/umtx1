@@ -79,11 +79,10 @@ a:focus {
 }
 
 
-#main-content {
-    width: 100%;
-    height: calc(100vh - 10px); /* Ajusta según el borde */
+#main-content{
+    position: relative;
     box-sizing: border-box;
-    margin: 0;
+	 border: none; /* Esto elimina cualquier borde */
 }
 
 #main-content > div {
@@ -241,5 +240,4 @@ border: none; /* Esto elimina cualquier borde */
 	}
 #console-view {
     border: none; /* Elimina el borde */
-  margin: 0;
 }
