@@ -223,20 +223,13 @@ a:focus {
     flex-grow: 1;
     unicode-bidi: embed;
     font-family: monospace;
-    white-space: pre;
+    white-space: pre-wrap; /* Asegura que los saltos de línea se respeten y el texto se ajuste */
     font-size: 15px;
     color: #fff;
     background-color: inherit;
     padding: 8px;
     margin: 8px;
     box-sizing: border-box;
+	
         }
-#console {
-    width: 100%;
-    height: 300px; /* Ajusta según lo necesario */
-    overflow-y: auto; /* Habilitar el desplazamiento */
-    white-space: pre-wrap; /* Mantener saltos de línea */
-    font-family: monospace;
-    background-color: #121212; /* Si lo deseas oscuro */
-    color: #fff; /* Para que se vea bien en fondo oscuro */
-}
+
