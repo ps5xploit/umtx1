@@ -25,18 +25,19 @@
 
     <!-- Row 2 -->
     <div id="main-content">
-        <div id="pre-jb-view" class="d-flex align-items-center justify-content-center flex-direction-column selected">
-            <!-- El botón está oculto automáticamente al cargar la página -->
-            <a tabindex="0" class="btn fw-bold" id="run-jb" style="display: none;" onclick="run()">Jailbreak</a>
-        </div>
-
-        <div id="console-view">
-            <!-- El mensaje de activación del exploit aparece aquí -->
-            <textarea id="console" class="log" readonly>★ Activating Xploit ...</textarea>
-        </div>
-
-        <div id="payloads-view"></div>
+    <div id="pre-jb-view" class="d-flex align-items-center justify-content-center flex-direction-column selected" style="position: relative; z-index: 9999;">
+        <!-- El botón está oculto automáticamente al cargar la página -->
+        <a tabindex="0" class="btn fw-bold" id="run-jb" style="display: none;" onclick="run()">Jailbreak</a>
     </div>
+
+    <div id="console-view" style="position: relative; z-index: 9999;">
+        <!-- El mensaje de activación del exploit aparece aquí -->
+        <textarea id="console" class="log" readonly>★ Activating Xploit ...</textarea>
+    </div>
+
+    <div id="payloads-view" style="position: relative; z-index: 9999;"></div>
+</div>
+
 
     <!-- Row 3 -->
     <div id="footer"> <p align="center" style="color:white;">Special Thanks to:
@@ -46,7 +47,7 @@
           <h1 align="center" class="Estilo1"><a style="color:white; margin-left: 15px; font-size:18px;">Thanks to All the developers who contributed to the PS4-PS5 Scene ...</a><a href="https://twitter.com/m0ur0ne" target="_blank" style="font-size:18px;">Website By: Mouuu <span class="Estilo3">㋡</span></a></h1>
             <p><span class="Estilo2">for system version 3.00, 3.20, 4.00, 4.02, 4.03, 4.50, 4.51</span>
     </p></div>
-    <!-- This is absolute positioned to the body-->
+    <!-- This is notification cache-->
       <div id="toast-container"></div>
       </div>
 

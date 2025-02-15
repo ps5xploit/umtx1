@@ -109,7 +109,7 @@ a:focus {
 
 #main-content > div {
     position: absolute;
-    top: 0;
+    top: -250;
     left: 0;
     width: 50%;
     height: 50%;
@@ -119,6 +119,7 @@ a:focus {
     box-sizing: border-box;
     display: flex;
 	 border: none; /* Esto elimina cualquier borde */
+font-size: 25px;
 }
 
 #payloads-view {
@@ -236,19 +237,21 @@ background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAABICAI
     display: block !important;  /* O alguna propiedad que mantenga el elemento visible */
 }
 .log {
-               display: block;
+    display: block;
     flex-grow: 1;
     unicode-bidi: embed;
     font-family: monospace;
     white-space: pre-wrap; /* Asegura que los saltos de línea se respeten y el texto se ajuste */
-    font-size: 15px;
+    font-size: 25px;
     color: #fff;
     background-color: inherit;
     padding: 8px;
     margin: 8px;
     box-sizing: border-box;
-	border: none; /* Elimina el borde */
-        }
+    border: none; /* Elimina el borde */
+    margin-top: -20px; /* Ajusta el valor según necesites para subir el contenido */
+}
+
 #textarea {
 
 border: none; /* Esto elimina cualquier borde */
