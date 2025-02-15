@@ -234,7 +234,10 @@ a:focus {
     box-sizing: border-box;
 	
         }
-textarea {
+#textarea {
 
 border: none; /* Esto elimina cualquier borde */
 	}
+#console-view {
+    border: none; /* Elimina el borde */
+}
