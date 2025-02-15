@@ -44,7 +44,7 @@ user-select: none;
     padding: ;
     margin: 0;
     overflow: hidden;
-   
+
 
 
 
@@ -186,6 +186,14 @@ a:focus {
     pointer-events: auto !important;
 }
 
+/* notifi */
+#toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+
+}
 
 .toast {
     background: black;
@@ -205,7 +213,7 @@ background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAABICAI
             background-position: center;
             background-position: left center; /* Mueve la imagen hacia la izquierda */
 	padding-left: 40px; /* Agregar espacio desde el lado izquierdo */
-    
+
 }
 
 .toast.show {
@@ -216,20 +224,6 @@ background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAABICAI
 .toast.hide {
     opacity: 0;
     transform: translateX(100%); /* Cambiado para que desaparezca hacia la derecha */
-}
-
-
-.l2-redirect-box {
-    background: #bdc0c2;
-    border-radius: 5px;
-    padding: 0.2rem 0.4rem;
-    text-align: center;
-    position: relative;
-    display: flex;
-    color: #4e4e4e;
-    font-size: 1.2rem;
-    font-weight: bold;
-    line-height: 1;
 }
 
 
