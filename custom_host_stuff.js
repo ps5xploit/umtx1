@@ -141,7 +141,7 @@ function registerAppCacheEventHandlers() {
     }, false);
 
     appCache.addEventListener('downloading', function (e) {
-        createOrUpdateAppCacheToast('★ Downloading cache ...');
+        createOrUpdateAppCacheToast('★ Downloading cache');
     }, false);
 
     appCache.addEventListener('error', function (e) {
@@ -163,7 +163,7 @@ function registerAppCacheEventHandlers() {
     appCache.addEventListener('progress', function (e) {
     let dots = '.'.repeat(Math.min(Math.floor((e.loaded / e.total) * 3), 3)); // Máximo 3 puntos suspensivos
 
-    createOrUpdateAppCacheToast('★ Downloading cache ... ' + dots);
+    createOrUpdateAppCacheToast('★ Downloading cache' + dots);
 
     if (e.loaded + 1 == e.total) {
         createOrUpdateAppCacheToast("★ Done wait ...");
