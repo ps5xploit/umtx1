@@ -102,13 +102,32 @@
         <a tabindex="0" class="btn fw-bold" id="run-jb" style="display: none;" onclick="run()"></a>
     </div>
 
-    <div id="console-view" style="position: relative; z-index: 9999;height:50px;">
-        <!-- Texto AutoJailbreak --><textarea id="console" class="log" readonly style="width: 439px; height: 329px;">★ Activating Xploit ...</textarea>
-
-    </div>
-
-    <div id="payloads-view" style="position: relative; z-index: 9999;height:50px;"></div>
+    <div id="console-view" style="position: relative; z-index: 9999; height: 50px;">
+    <!-- Texto AutoJailbreak -->
+    <textarea id="console" class="log" readonly style="width: 439px; height: 329px;">★ Activating Xploit ...</textarea>
 </div>
+
+<div id="payloads-view" style="position: relative; z-index: 9999; height: 50px;"></div>
+
+<script>
+// Asegúrate de que el script maneja el cambio a la pantalla de payloads
+window.addEventListener('load', function() {
+    // Aquí agregamos el mensaje de "Debug Settings Ready"
+    const debugMessage = "★ Debug Settings Ready ✓<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Waiting payload";
+
+    // Agregar el mensaje al div de 'console-view'
+    const consoleView = document.getElementById('console');
+    if (consoleView) {
+        consoleView.value += "\n" + debugMessage;
+    }
+
+    // Ahora que se ha mostrado el mensaje, podemos proceder con el flujo del exploit
+    setTimeout(() => {
+        // Lógica para cambiar a la pantalla de payloads
+        switchPage("payloads-view"); // Asegúrate de que esta función esté definida en tu exploit.js
+    }, 1000);
+});
+</script>
 
 
     <!-- Row 3 -->
