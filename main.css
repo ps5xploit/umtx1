@@ -82,6 +82,7 @@ a:focus {
 #main-content{
     position: relative;
     box-sizing: border-box;
+	 border: none; /* Esto elimina cualquier borde */
 }
 
 #main-content > div {
@@ -95,6 +96,7 @@ a:focus {
     transition: opacity 0.3s ease-in-out;
     box-sizing: border-box;
     display: flex;
+	 border: none; /* Esto elimina cualquier borde */
 }
 
 #payloads-view {
