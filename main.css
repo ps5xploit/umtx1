@@ -79,13 +79,11 @@ a:focus {
 }
 
 
-#main-content{
-width: 100%;
-    position: relative;
+#main-content {
+    width: 100%;
+    height: calc(100vh - 10px); /* Ajusta según el borde */
     box-sizing: border-box;
-	 border: none; /* Esto elimina cualquier borde */
-margin: 0;
-height: calc(100vh - 10px); /* Ajusta según el borde */
+    margin: 0;
 }
 
 #main-content > div {
