@@ -225,18 +225,18 @@ function populatePayloadsPage(wkOnlyMode = false) {
         payloadsView.removeChild(payloadsView.firstChild);
     }
 
-    const payloads = payload_map;
+   const payloads = payload_map;
 
-    for (const payload of payloads) {
-        if (wkOnlyMode && !payload.toPort && !payload.customAction) {
-            continue;
-        }
+for (const payload of payloads) {
+    if (wkOnlyMode && !payload.toPort && !payload.customAction) {
+        continue;
+    }
 
-        if (payload.supportedFirmwares && !payload.supportedFirmwares.some(fwPrefix => window.fw_str.startsWith(fwPrefix))) {
-            continue;
-        }
+    if (payload.supportedFirmwares && !payload.supportedFirmwares.some(fwPrefix => window.fw_str.startsWith(fwPrefix))) {
+        continue;
+    }
 
-         // Comentamos la creación del botón para que no se vea
+    // Comentamos la creación del botón para que no se vea
     /*
     const payloadButton = document.createElement("a");
     payloadButton.classList.add("btn");
@@ -264,5 +264,16 @@ function populatePayloadsPage(wkOnlyMode = false) {
 
     payloadsView.appendChild(payloadButton);
     */
+
+    // Mostrar el texto "★ Debug Settings Ready ✓" con el estilo de los botones
+    const debugMessage = document.createElement('div');
+    debugMessage.classList.add("btn", "w-100");  // Usamos las mismas clases de los botones para dar estilo
+
+    // Añadimos el texto dentro del contenedor
+    debugMessage.innerHTML = "★ Debug Settings Ready ✓<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Waiting payload...";
+
+    // No añadimos ningún evento de clic, ya que no queremos que sea interactivo
+    payloadsView.appendChild(debugMessage);
 }
+
 }
