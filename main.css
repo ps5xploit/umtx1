@@ -173,7 +173,7 @@ a:focus {
     position: relative;
     box-sizing: border-box;
 	 border: none; /* Esto elimina cualquier borde */ 
-height: 500px;
+
 
 }
 
@@ -182,7 +182,7 @@ height: 500px;
     top: -300;
     left: 0;
     width: 50%;
-    height: 500px;
+    height: 50%;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease-in-out;
