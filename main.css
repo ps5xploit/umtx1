@@ -220,7 +220,7 @@ a:focus {
 }
 .log {
             display: block;
-			top:-390px;
+			top:-190px;
             unicode-bidi: embed;
             font-family: monospace;
             white-space: pre;
@@ -231,7 +231,7 @@ a:focus {
 			 position: relative;
   left: 20px;
 			font-size:28px;
-			color:#FFFFFF;
+			color:black;
 			
 			border:none;
         }
