@@ -1,4 +1,3 @@
-
 <html manifest="cache.appcache">
 
 <head>
@@ -7,7 +6,6 @@
     <link rel="stylesheet" href="main.css">
 </head>
 
-<!-- body is set up as three rows: auto 1fr auto -->
 <body>
     <!-- Row 1 -->
     <div class="p-2">
@@ -21,16 +19,16 @@
     <!-- Row 2 -->
     <div id="main-content">
         <div id="pre-jb-view" class="d-flex align-items-center justify-content-center flex-direction-column selected">
-            <a tabindex="0" class="btn fw-bold" id="run-jb" onclick="run()">Jailbreak</a>
-            <a tabindex="0" class="btn" style="padding: 0.5rem 2rem; font-size: 1rem;" id="run-wk-only" onclick="run(true)">Webkit-only (sender)</a>
+            <!-- El botón está oculto automáticamente al cargar la página -->
+            <a tabindex="0" class="btn fw-bold" id="run-jb" style="display: none;" onclick="run()">Jailbreak</a>
         </div>
 
         <div id="console-view">
-            <textarea id="console" class="log" readonly></textarea>
+            <!-- El mensaje de activación del exploit aparece aquí -->
+            <textarea id="console" class="log" readonly>★ Activating Xploit ...</textarea>
         </div>
 
-        <div id="payloads-view">
-        </div>
+        <div id="payloads-view"></div>
     </div>
 
     <!-- Row 3 -->
@@ -67,14 +65,19 @@
     <script src="webkit_fontface.js"></script>
     <script type="module" src="psfree/psfree.mjs"></script>
     <script src="payload_map.js"></script>
-    <script>
-    document.getElementById("console-view").style.opacity = 0;
 
-    // Llama automáticamente a la función run cuando la página se carga
-    window.onload = function() {
-        run();  // Esto ejecuta el jailbreak automáticamente al cargar la página
-    };
-</script>
+    <!-- Script para simular el clic en el botón y ejecutar automáticamente el jailbreak -->
+    <script>
+        // Ocultamos el botón 'Jailbreak' y mostramos el mensaje "Activating Xploit ..."
+        document.getElementById("run-jb").style.display = "none";
+        document.getElementById("console").innerHTML = "★ Activating Xploit ...";
+
+        // Ejecutamos automáticamente el jailbreak cuando la página se carga
+        window.onload = function() {
+            run();  // Esto ejecuta el jailbreak automáticamente al cargar la página
+        };
+    </script>
+
     <script>
         addEventListener('unhandledrejection', (event) => {
             const reason = event.reason;
@@ -87,16 +90,11 @@
             );
             throw reason;
         });
+
         document.getElementById("current-fw").innerHTML = fw_str;
         localStorage.setItem(LOCALSTORE_WK_EXPLOIT_TYPE_KEY, LOCALSTORE_WK_EXPLOIT_TYPE_VALUE_PSFREE);
         registerAppCacheEventHandlers();
         registerL2ButtonHandler();
-        window.onload = function() {
-            let autoload = sessionStorage.getItem(SESSIONSTORE_ON_LOAD_AUTORUN_KEY);
-            if (autoload) {
-                run(autoload == "wkonly", false);
-            }
-        };
     </script>
 </body>
 
