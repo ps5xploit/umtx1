@@ -334,10 +334,14 @@ background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAABICAI
     margin-top: -190px; /* Ajusta el valor según necesites para subir el contenido */
 }
 
-#textarea {
-
-border: none; /* Esto elimina cualquier borde */
-	}
+textarea {
+    pointer-events: none; /* Desactiva cualquier interacción con el textarea */
+    border: none; /* Elimina el borde del textarea */
+    outline: none; /* Elimina el borde que aparece cuando se hace clic */
+    background-color: transparent; /* Asegura que el fondo sea transparente si lo deseas */
+    resize: none; /* Opcional: Desactiva la posibilidad de redimensionar el textarea */
+    color: inherit; /* Hereda el color del texto para que no cambie */
+}
 #console-view {
     border: none; /* Elimina el borde */
 
