@@ -246,7 +246,7 @@ background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAABICAI
     color: #fff;
     background-color: inherit;
     padding: 8px;
-    margin: 8px;
+   margin-left:30px;
     box-sizing: border-box;
     border: none; /* Elimina el borde */
     margin-top: -20px; /* Ajusta el valor según necesites para subir el contenido */
