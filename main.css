@@ -234,4 +234,7 @@ a:focus {
     box-sizing: border-box;
 	
         }
+textarea {
 
+border: none; /* Esto elimina cualquier borde */
+	}
