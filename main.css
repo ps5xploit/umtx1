@@ -210,21 +210,30 @@ a:focus {
 }
 
 
-.log {
-    display: flex;
-    flex-grow: 1;
-    unicode-bidi: embed;
-    font-family: monospace;
-    white-space: pre;
-    font-size: 1.2rem;
-    color: #fff;
-    background-color: inherit;
-    border: var(--primary-color) 1px solid;
-    border-radius: 5px;
-    padding: 8px;
-    margin: 8px;
-    box-sizing: border-box;
+.j {
+    font-size: 15px;
+    color: #2F3335;
 }
+
+.log {
+            display: block;
+			top:-390px;
+            unicode-bidi: embed;
+            font-family: monospace;
+            white-space: pre;
+            font-size: 15px;
+            width: 100%;
+            height: 80%;
+			text-align:left;
+			 position: relative;
+  left: 20px;
+			font-size:28px;
+			color:#FFFFFF;
+			
+			border:none;
+        }
+
+
 
 .log:active, .log:focus {
     outline: 0;
