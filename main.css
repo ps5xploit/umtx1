@@ -158,7 +158,7 @@ a:focus {
     background-color: var(--primary-color);
     border: none;
     color: #fff;
-    font-size: 1.3rem;
+    font-size: 28px;
     transition: background-color 0.3s ease-in-out;
     box-sizing: border-box;
 }
@@ -219,6 +219,7 @@ font-size: 25px;
     border-radius: 4px; /* Bordes redondeados */
     color: white; /* Aseguramos que el texto sea visible en el fondo negro */
     overflow-wrap: break-word; /* Hace que el texto se divida correctamente si es necesario */
+font-size: 28px;
 }
 
 .payload-btn-title {
