@@ -175,7 +175,7 @@ a:focus {
 
 #main-content > div {
     position: absolute;
-    top: -250;
+    top: -300;
     left: 0;
     width: 50%;
     height: 50%;
@@ -315,7 +315,7 @@ background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAABICAI
    margin-left:30px;
     box-sizing: border-box;
     border: none; /* Elimina el borde */
-    margin-top: -150px; /* Ajusta el valor según necesites para subir el contenido */
+    margin-top: -190px; /* Ajusta el valor según necesites para subir el contenido */
 }
 
 #textarea {
