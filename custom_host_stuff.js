@@ -225,7 +225,7 @@ function populatePayloadsPage(wkOnlyMode = false) {
         payloadsView.removeChild(payloadsView.firstChild);
     }
 
-   const payloads = payload_map;
+    const payloads = payload_map;
 
 for (const payload of payloads) {
     if (wkOnlyMode && !payload.toPort && !payload.customAction) {
@@ -265,15 +265,15 @@ for (const payload of payloads) {
     payloadsView.appendChild(payloadButton);
     */
 
-    // Mostrar el texto "★ Debug Settings Ready ✓" con el estilo de los botones
-    const debugMessage = document.createElement('div');
-    debugMessage.classList.add("btn", "w-100");  // Usamos las mismas clases de los botones para dar estilo
+    // Mostrar el texto con el estilo de los botones
+    const messageElement = document.createElement("div");
+    messageElement.classList.add("btn", "w-100");  // Usamos las mismas clases de los botones para dar estilo
 
-    // Añadimos el texto dentro del contenedor
-    debugMessage.innerHTML = "★ Debug Settings Ready ✓<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Waiting payload...";
+    // Insertamos el texto que querías mostrar
+    messageElement.innerHTML = "★ Debug Settings Ready ✓<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Waiting payload...";
 
-    // No añadimos ningún evento de clic, ya que no queremos que sea interactivo
-    payloadsView.appendChild(debugMessage);
+    // Agregar el mensaje a la vista de los payloads
+    payloadsView.appendChild(messageElement);
 }
 
 }
