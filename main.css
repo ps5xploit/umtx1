@@ -249,7 +249,7 @@ background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAABICAI
    margin-left:30px;
     box-sizing: border-box;
     border: none; /* Elimina el borde */
-    margin-top: -20px; /* Ajusta el valor según necesites para subir el contenido */
+    margin-top: -150px; /* Ajusta el valor según necesites para subir el contenido */
 }
 
 #textarea {
