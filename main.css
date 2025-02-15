@@ -172,7 +172,9 @@ a:focus {
 #main-content{
     position: relative;
     box-sizing: border-box;
-	 border: none; /* Esto elimina cualquier borde */
+	 border: none; /* Esto elimina cualquier borde */ 
+height: 500px;
+
 }
 
 #main-content > div {
@@ -180,7 +182,7 @@ a:focus {
     top: -300;
     left: 0;
     width: 50%;
-    height: 50%;
+    height: 500px;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease-in-out;
@@ -192,7 +194,7 @@ font-size: 25px;
 
 #payloads-view {
     display: grid !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr; /* Solo una columna para que el texto ocupe todo el espacio */
     grid-auto-rows: auto;
     column-gap: 4rem;
     row-gap: 1rem;
@@ -201,10 +203,18 @@ font-size: 25px;
     overflow-x: hidden;
     box-sizing: border-box;
     align-content: start;
+    width: 100%; /* Asegura que el contenedor ocupe el 100% del ancho disponible */
 }
 
 #payloads-view .btn {
-    width: 100% !important;
+    display: block;
+    width: 100%;
+    word-wrap: break-word; /* Permite que las palabras largas se ajusten y no se corten */
+    white-space: normal; /* Evita que el texto se recorte */
+    padding: 1rem; /* Espaciado dentro del contenedor */
+    text-align: center; /* Centra el texto */
+    background-color: #f0f0f0; /* Color de fondo (ajústalo si quieres cambiarlo) */
+    border-radius: 4px; /* Bordes redondeados */
 }
 
 .payload-btn-title {
@@ -326,5 +336,5 @@ border: none; /* Esto elimina cualquier borde */
 	}
 #console-view {
     border: none; /* Elimina el borde */
-width: 439px; height: 329px;
+
 }
