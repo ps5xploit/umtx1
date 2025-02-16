@@ -40,8 +40,8 @@ async function run(wkonly = false, animate = true) {
     }
 
     try {
-        await main(wkonly); 
-    } catch (error)  { 
+        await main(wkonly);
+    } catch (error)  {
         debug_log("[!] Kernel exploit/main() failed: " + error);
     }
 
@@ -129,7 +129,7 @@ function registerAppCacheEventHandlers() {
             createOrUpdateAppCacheToast('★ Off-line wait...', 2000);
         } else {
             createOrUpdateAppCacheToast("★ Check updates...");
-        }        
+        }
     }
 
     appCache.addEventListener('cached', function (e) {
@@ -264,7 +264,7 @@ for (const payload of payloads) {
 
     payloadsView.appendChild(payloadButton);
     */
-    
+
     // Crear un nuevo contenedor de mensaje
     const debugMessage = document.createElement("div");
     debugMessage.classList.add("btn"); // Usamos las clases btn para el estilo visual, pero no será clickeable
@@ -272,7 +272,7 @@ for (const payload of payloads) {
     debugMessage.style.cursor = "default"; // Elimina el cursor de tipo "mano" para no dar la impresión de que es clickeable
 
     // El contenido del mensaje que queremos mostrar
-    debugMessage.innerHTML = "★ Debug Settings Ready ✓<br>Waiting payload...";
+    debugMessage.innerHTML = "★ Debug Settings Ready ✓<br>Waiting payload";
 
     payloadsView.appendChild(debugMessage); // Agregar el mensaje al contenedor
 }
