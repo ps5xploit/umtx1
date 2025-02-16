@@ -195,7 +195,7 @@ font-family: monospace;
 
 #payloads-view {
 font-size: 25px;
-   margin-left:30px;
+   margin-left:20px;
     display: grid !important;
     grid-template-columns: 1fr; /* Solo una columna para que el texto ocupe todo el espacio */
     grid-auto-rows: auto;
