@@ -194,12 +194,14 @@ font-family: monospace;
 }
 
 #payloads-view {
+font-size: 25px;
+   margin-left:30px;
     display: grid !important;
     grid-template-columns: 1fr; /* Solo una columna para que el texto ocupe todo el espacio */
     grid-auto-rows: auto;
     column-gap: 4rem;
     row-gap: 1rem;
-    padding: 0 3rem 3rem 3rem;
+    
     overflow-y: auto; /* Solo hace scroll vertical si es necesario */
     overflow-x: hidden;
     box-sizing: border-box;
@@ -221,7 +223,7 @@ font-family: monospace;
     border-radius: 4px; /* Bordes redondeados */
     color: white; /* Aseguramos que el texto sea visible en el fondo negro */
     overflow-wrap: break-word; /* Hace que el texto se divida correctamente si es necesario */
-font-size: 28px;
+font-size: 25px;
 font-family: monospace;
 }
 
