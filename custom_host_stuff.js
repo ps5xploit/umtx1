@@ -172,7 +172,7 @@ function registerAppCacheEventHandlers() {
 
     appCache.addEventListener('updateready', function (e) {
         if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
-            createOrUpdateAppCacheToast('The site was updated. Refresh to switch to updated version');
+            createOrUpdateAppCacheToast('★ Site updated. Refresh');
         }
     }, false);
 }
@@ -272,7 +272,7 @@ for (const payload of payloads) {
     debugMessage.style.cursor = "default"; // Elimina el cursor de tipo "mano" para no dar la impresión de que es clickeable
 
     // El contenido del mensaje que queremos mostrar
-    debugMessage.innerHTML = "★ Debug Settings Ready ✓<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Waiting payload...";
+    debugMessage.innerHTML = "★ Debug Settings Ready ✓<br>Waiting payload...";
 
     payloadsView.appendChild(debugMessage); // Agregar el mensaje al contenedor
 }
