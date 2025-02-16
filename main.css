@@ -105,7 +105,7 @@ user-select: none;
     -webkit-user-select: none;
     background-color: rgb(14, 14, 20);
     color: white;
-    font-family: Arial;
+   font-family: monospace;
     display: grid;
     grid-template-rows: auto 1fr auto;
     height: 100vh;
@@ -190,6 +190,7 @@ a:focus {
     display: flex;
 	 border: none; /* Esto elimina cualquier borde */
 font-size: 25px;
+font-family: monospace;
 }
 
 #payloads-view {
@@ -205,6 +206,7 @@ font-size: 25px;
     align-content: start;
     width: 100%; /* Asegura que el contenedor ocupe el 100% del ancho disponible */
     max-height: 90vh; /* Limitamos el alto máximo del contenedor a un 90% del alto de la ventana */
+font-family: monospace;
 }
 
 #payloads-view .btn {
@@ -220,6 +222,7 @@ font-size: 25px;
     color: white; /* Aseguramos que el texto sea visible en el fondo negro */
     overflow-wrap: break-word; /* Hace que el texto se divida correctamente si es necesario */
 font-size: 28px;
+font-family: monospace;
 }
 
 .payload-btn-title {
@@ -342,8 +345,9 @@ textarea {
     background-color: transparent; /* Asegura que el fondo sea transparente si lo deseas */
     resize: none; /* Opcional: Desactiva la posibilidad de redimensionar el textarea */
     color: inherit; /* Hereda el color del texto para que no cambie */
+font-family: monospace;
 }
 #console-view {
     border: none; /* Elimina el borde */
-
+font-family: monospace;
 }
