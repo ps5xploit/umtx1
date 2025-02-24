@@ -43,15 +43,16 @@ const payload_map = [
         supportedFirmwares: ["3.", "4."]
     },
    
-   {
-        displayTitle: "kstuff_5.10-v",
-        description: "kstuff_5.10-v",
-        fileName: "kstuff_5.10-v.elf",
-        author: "kstuff_5.10-v",
-        projectSource: "kstuff_5.10-v",
-        binarySource: "kstuff_5.10-v",
-        version: "5.10",
-        supportedFirmwares: ["3.", "4."]
-    },
+   // {
+   //     // https://github.com/Storm21CH/PS5_Browser_appCache_remove
+   //     displayTitle: "Browser appcache remover",
+    //    description: "Deletes for only the current user in webkit-only mode",
+    //    fileName: "",
+    //    author: "Storm21CH, idlesauce",
+    //    projectSource: "",
+     //   binarySource: "",
+    //    version: "1.0",
+    //    customAction: CUSTOM_ACTION_APPCACHE_REMOVE
+  //  }
 
 ];
