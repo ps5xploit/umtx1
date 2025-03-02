@@ -41,6 +41,7 @@ offsets\5.10.js
 offsets\5.50.js 
 payloads\elfldr.elf 
 payloads\etaHEN.bin 
+payloads\kstuff-550.elf
 psfree\alert.mjs 
 psfree\config.mjs 
 psfree\COPYING 
