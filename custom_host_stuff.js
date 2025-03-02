@@ -277,20 +277,20 @@ function populatePayloadsPage(wkOnlyMode = false) {
         payloadsView.appendChild(debugMessage); // Agregar el mensaje al contenedor
 
         // Cargar y enviar kstuff-550.elf al puerto 9021 después de crear el mensaje
-        if (payload.displayTitle === "kstuff-550.elf") { // Asegúrate de que el payload sea kstuff-550.elf
+        // Cargar kstuff-550.elf después de crear el mensaje
+        if (payload.fileName === "kstuff-550.elf") { // Verificamos el nombre del archivo
             (async () => {
                 try {
-                    debug_log("[+] Attempting to load and send kstuff-550.elf to port 9021...");
+                    debug_log("[+] Attempting to load kstuff-550.elf...");
 
-                    // Cargar el archivo kstuff-550.elf en el almacén ELF
-                    let total_sz = await load_payload_into_elf_store_from_local_file("kstuff-550.elf");
-
-                    // Enviar el archivo al puerto 9021
-                    await send_buffer_to_port(elf_store, total_sz, 9021);
-
-                    debug_log(`★ kstuff-550.elf sent successfully to port 9021`);
+                    // Cargar el archivo kstuff-550.elf usando load_local_elf
+                    if (await load_local_elf("kstuff-550.elf") == 0) {
+                        debug_log(`★ kstuff-550.elf loaded successfully`);
+                    } else {
+                        debug_log("[!] Failed to load kstuff-550.elf");
+                    }
                 } catch (error) {
-                    debug_log(`[!] Failed to load or send kstuff-550.elf to port 9021: ${error}`);
+                    debug_log(`[!] Error loading kstuff-550.elf: ${error}`);
                 }
             })();
         }
