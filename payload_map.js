@@ -42,6 +42,16 @@ const payload_map = [
         version: "2.0b",
         supportedFirmwares: ["3.", "4."]
     },
+     {
+        displayTitle: "kstuff-550",
+        description: "kstuff-550",
+        fileName: "kstuff-550.elf",
+        author: "kstuff-550",
+        projectSource: "kstuff-550",
+        binarySource: "kstuff-550",
+        version: "5.50",
+        supportedFirmwares: ["5", "550"]
+    },
    
    // {
    //     // https://github.com/Storm21CH/PS5_Browser_appCache_remove
