@@ -225,74 +225,57 @@ function populatePayloadsPage(wkOnlyMode = false) {
         payloadsView.removeChild(payloadsView.firstChild);
     }
 
-    const payloads = payload_map;
+const payloads = payload_map;
 
-    for (const payload of payloads) {
-        if (wkOnlyMode && !payload.toPort && !payload.customAction) {
-            continue;
-        }
-
-        if (payload.supportedFirmwares && !payload.supportedFirmwares.some(fwPrefix => window.fw_str.startsWith(fwPrefix))) {
-            continue;
-        }
-
-        // Comentamos la creación del botón para que no se vea
-        /*
-        const payloadButton = document.createElement("a");
-        payloadButton.classList.add("btn");
-        payloadButton.classList.add("w-100");
-        payloadButton.tabIndex = 0;
-
-        const payloadTitle = document.createElement("p");
-        payloadTitle.classList.add("payload-btn-title");
-        payloadTitle.textContent = payload.displayTitle;
-
-        const payloadDescription = document.createElement("p");
-        payloadDescription.classList.add("payload-btn-description");
-        payloadDescription.textContent = payload.description;
-
-        const payloadInfo = document.createElement("p");
-        payloadInfo.classList.add("payload-btn-info");
-        payloadInfo.innerHTML = `v${payload.version} &centerdot; ${payload.author}`;
-
-        payloadButton.appendChild(payloadTitle);
-        payloadButton.appendChild(payloadDescription);
-        payloadButton.appendChild(payloadInfo);
-        payloadButton.addEventListener("click", function () {
-            window.dispatchEvent(new CustomEvent(MAINLOOP_EXECUTE_PAYLOAD_REQUEST, { detail: payload }));
-        });
-
-        payloadsView.appendChild(payloadButton);
-        */
-
-        // Crear un nuevo contenedor de mensaje
-        const debugMessage = document.createElement("div");
-        debugMessage.classList.add("btn"); // Usamos las clases btn para el estilo visual, pero no será clickeable
-        debugMessage.style.pointerEvents = "none"; // Deshabilita cualquier interacción
-        debugMessage.style.cursor = "default"; // Elimina el cursor de tipo "mano" para no dar la impresión de que es clickeable
-
-        // El contenido del mensaje que queremos mostrar
-        debugMessage.innerHTML = "★ Debug Settings Ready ✓<br>Waiting payload";
-
-        payloadsView.appendChild(debugMessage); // Agregar el mensaje al contenedor
-
-        // Cargar y enviar kstuff-550.elf al puerto 9021 después de crear el mensaje
-        // Cargar kstuff-550.elf después de crear el mensaje
-        if (payload.fileName === "kstuff-550.elf") { // Verificamos el nombre del archivo
-            (async () => {
-                try {
-                    debug_log("[+] Attempting to load kstuff-550.elf...");
-
-                    // Cargar el archivo kstuff-550.elf usando load_local_elf
-                    if (await load_local_elf("kstuff-550.elf") == 0) {
-                        debug_log(`★ kstuff-550.elf loaded successfully`);
-                    } else {
-                        debug_log("[!] Failed to load kstuff-550.elf");
-                    }
-                } catch (error) {
-                    debug_log(`[!] Error loading kstuff-550.elf: ${error}`);
-                }
-            })();
-        }
+for (const payload of payloads) {
+    if (wkOnlyMode && !payload.toPort && !payload.customAction) {
+        continue;
     }
+
+    if (payload.supportedFirmwares && !payload.supportedFirmwares.some(fwPrefix => window.fw_str.startsWith(fwPrefix))) {
+        continue;
+    }
+
+    // Comentamos la creación del botón para que no se vea
+    /*
+    const payloadButton = document.createElement("a");
+    payloadButton.classList.add("btn");
+    payloadButton.classList.add("w-100");
+    payloadButton.tabIndex = 0;
+
+    const payloadTitle = document.createElement("p");
+    payloadTitle.classList.add("payload-btn-title");
+    payloadTitle.textContent = payload.displayTitle;
+
+    const payloadDescription = document.createElement("p");
+    payloadDescription.classList.add("payload-btn-description");
+    payloadDescription.textContent = payload.description;
+
+    const payloadInfo = document.createElement("p");
+    payloadInfo.classList.add("payload-btn-info");
+    payloadInfo.innerHTML = `v${payload.version} &centerdot; ${payload.author}`;
+
+    payloadButton.appendChild(payloadTitle);
+    payloadButton.appendChild(payloadDescription);
+    payloadButton.appendChild(payloadInfo);
+    payloadButton.addEventListener("click", function () {
+        window.dispatchEvent(new CustomEvent(MAINLOOP_EXECUTE_PAYLOAD_REQUEST, { detail: payload }));
+    });
+
+    payloadsView.appendChild(payloadButton);
+    */
+
+    // Crear un nuevo contenedor de mensaje
+    const debugMessage = document.createElement("div");
+    debugMessage.classList.add("btn"); // Usamos las clases btn para el estilo visual, pero no será clickeable
+    debugMessage.style.pointerEvents = "none"; // Deshabilita cualquier interacción
+    debugMessage.style.cursor = "default"; // Elimina el cursor de tipo "mano" para no dar la impresión de que es clickeable
+
+    // El contenido del mensaje que queremos mostrar
+    debugMessage.innerHTML = "★ Debug Settings Ready ✓<br>Waiting payload";
+
+    payloadsView.appendChild(debugMessage); // Agregar el mensaje al contenedor
+}
+
+
 }
