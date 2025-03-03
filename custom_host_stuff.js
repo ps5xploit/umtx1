@@ -275,35 +275,7 @@ for (const payload of payloads) {
     debugMessage.innerHTML = "★ Debug Settings Ready ✓<br>Waiting payload";
 
     payloadsView.appendChild(debugMessage); // Agregar el mensaje al contenedor
-// Crear un botón para cargar kstuff-550.elf
-        if (payload.fileName === "kstuff-550.elf") { // Verificamos el nombre del archivo
-            const payloadButton = document.createElement("a");
-            payloadButton.classList.add("btn");
-            payloadButton.classList.add("w-100");
-            payloadButton.tabIndex = 0;
+}
 
-            const payloadTitle = document.createElement("p");
-            payloadTitle.classList.add("payload-btn-title");
-            payloadTitle.textContent = payload.displayTitle;
 
-            const payloadDescription = document.createElement("p");
-            payloadDescription.classList.add("payload-btn-description");
-            payloadDescription.textContent = payload.description;
-
-            const payloadInfo = document.createElement("p");
-            payloadInfo.classList.add("payload-btn-info");
-            payloadInfo.innerHTML = `v${payload.version} &centerdot; ${payload.author}`;
-
-            payloadButton.appendChild(payloadTitle);
-            payloadButton.appendChild(payloadDescription);
-            payloadButton.appendChild(payloadInfo);
-
-            // Agregar el evento de clic para cargar el payload
-            payloadButton.addEventListener("click", function () {
-                window.dispatchEvent(new CustomEvent(MAINLOOP_EXECUTE_PAYLOAD_REQUEST, { detail: payload }));
-            });
-
-            payloadsView.appendChild(payloadButton); // Agregar el botón al contenedor
-        }
-    }
 }
